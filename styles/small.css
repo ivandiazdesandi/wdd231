@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  background-color: #fdfdfd;
+  color: #222;
+  padding: 0;
+  margin: 0;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #004466;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+header .logo img {
+  display: block;
+}
+
+#menu {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Nav */
+nav {
+  display: none;
+}
+
+nav ul {
+  list-style: none;
+  background-color: #004466;
+}
+
+nav ul li {
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+nav ul li a {
+  display: block;
+  padding: 0.75rem;
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: #006699;
+}
+
+/* Show nav when menu is open */
+nav.show {
+  display: block;
+}
+
+/* Main */
+main {
+  padding: 1rem;
+}
+
+main h1 {
+  margin-bottom: 1rem;
+  color: #004466;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+.filters {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filters button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #004466;
+  background-color: white;
+  color: #004466;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.filters button.active {
+  background-color: #004466;
+  color: white;
+}
+
+/* Course Grid */
+#courseGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.course-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.course-card.completed {
+  background-color: #e6f7e6;
+  border-color: #66bb66;
+}
+
+/* Footer */
+footer {
+  background-color: #004466;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #ffeeaa;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,63 @@
+@media screen and (min-width: 640px) {
+  /* Header and nav */
+  header {
+    flex-wrap: nowrap;
+  }
+
+  #menu {
+    display: none; /* hide hamburger */
+  }
+
+  nav {
+    display: block !important;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 1rem;
+    background: none;
+  }
+
+  nav ul li {
+    border: none;
+  }
+
+  nav ul li a {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+  }
+
+  nav ul li a:hover,
+  nav ul li a.active {
+    background-color: #006699;
+  }
+
+  /* Main layout */
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  #courseGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer */
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    flex-wrap: wrap;
+  }
+
+  footer p {
+    margin: 0.25rem 0;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  #courseGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

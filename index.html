@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WDD231 • Ivan Diaz de Sandi Alvarez</title>
+  <meta name="description" content="Course home page for WDD231 by Ivan Diaz de Sandi Alvarez.">
+  <meta name="author" content="Ivan Diaz de Sandi Alvarez">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles/small.css">
+  <link rel="stylesheet" href="./styles/larger.css">
+
+  <script src="./scripts/navigation.js" defer></script>
+  <script src="./scripts/date.js" defer></script>
+  <script src="./scripts/course.js" defer></script>
+</head>
+<body>
+  <header>
+    <a href="./" class="logo">
+      <img src="./images/logo.svg" alt="Site logo" width="40" height="40">
+      <span>Ivan Diaz de Sandi Alvarez</span>
+    </a>
+
+    <button id="menu" aria-label="Menu">&#9776;</button>
+
+    <nav>
+      <ul id="navlist">
+        <li><a href="./index.html" class="active">Home</a></li>
+        <li><a href="./chamber/index.html">Chamber</a></li>
+        <li><a href="./final/index.html">Final</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Home</h1>
+
+    <section>
+      <h2>Introduction</h2>
+      <p>Hola! I’m Ivan from Mexico, currently living in Sydney, Australia. This is my WDD231 course home page.</p>
+    </section>
+
+    <section>
+      <h2>Web &amp; Computer Programming Certificate</h2>
+
+      <div class="filters">
+        <button data-filter="ALL" class="active">All Courses</button>
+        <button data-filter="WDD">WDD Courses</button>
+        <button data-filter="CSE">CSE Courses</button>
+      </div>
+
+      <p><strong>Total credits:</strong> <span id="creditTotal">0</span></p>
+
+      <div id="courseGrid"></div>
+    </section>
+
+    <section>
+      <h2>Resources</h2>
+      <ul>
+        <li><a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a></li>
+        <li><a href="https://web.dev/measure/" target="_blank">Lighthouse</a></li>
+        <li><a href="https://fonts.google.com/" target="_blank">Google Fonts</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <a href="https://github.com/ivandiazdesandi/wdd231" target="_blank">GitHub</a> |
+      <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_SLUG/" target="_blank">LinkedIn</a>
+    </p>
+    <p>© <span id="currentyear"></span> • Ivan Diaz de Sandi Alvarez • Sydney, Australia</p>
+    <p id="lastModified"></p>
+  </footer>
+</body>
+</html>
