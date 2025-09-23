@@ -1,65 +1,58 @@
 [
   {
-    "name": "Harbour Cafe",
-    "address": "25 Circular Quay, Sydney NSW",
-    "phone": "+61 2 5550 1111",
-    "website": "https://harbourcafe.example",
-    "image": "harbour-cafe.svg",
-    "membership": 3,
-    "description": "A waterfront cafe serving fresh coffee and artisan pastries."
+    "name": "Sydney Web Solutions",
+    "address": "100 George St, Sydney NSW",
+    "phone": "+61 2 9000 1234",
+    "website": "https://sydneywebsolutions.example",
+    "image": "sydneyweb.png",
+    "membership": 3
   },
   {
-    "name": "Opera Tech Solutions",
-    "address": "Suite 200, 123 George St, Sydney NSW",
-    "phone": "+61 2 5550 2222",
-    "website": "https://operatech.example",
-    "image": "opera-tech.svg",
-    "membership": 2,
-    "description": "Providing innovative IT and software services for businesses."
+    "name": "Harbour Finance",
+    "address": "45 Pitt St, Sydney NSW",
+    "phone": "+61 2 9555 6789",
+    "website": "https://harbourfinance.example",
+    "image": "harbourfinance.png",
+    "membership": 2
   },
   {
-    "name": "Bondi Fitness",
-    "address": "75 Bondi Rd, Sydney NSW",
-    "phone": "+61 2 5550 3333",
-    "website": "https://bondifitness.example",
-    "image": "bondi-fitness.svg",
-    "membership": 1,
-    "description": "Community gym and fitness center with modern equipment."
+    "name": "Aussie Fitness",
+    "address": "200 Oxford St, Sydney NSW",
+    "phone": "+61 2 9333 2468",
+    "website": "https://aussiefitness.example",
+    "image": "aussiefitness.png",
+    "membership": 1
   },
   {
-    "name": "Sydney Bookstore",
-    "address": "88 Pitt St, Sydney NSW",
-    "phone": "+61 2 5550 4444",
-    "website": "https://sydneybooks.example",
-    "image": "sydney-bookstore.svg",
-    "membership": 3,
-    "description": "Independent bookstore offering a wide range of titles."
+    "name": "Koala Tech",
+    "address": "75 Macquarie St, Sydney NSW",
+    "phone": "+61 2 9888 7654",
+    "website": "https://koalatech.example",
+    "image": "koalatech.png",
+    "membership": 3
   },
   {
-    "name": "Harbourside Florist",
-    "address": "12 Market St, Sydney NSW",
-    "phone": "+61 2 5550 5555",
-    "website": "https://harboursideflorist.example",
-    "image": "harbourside-florist.svg",
-    "membership": 2,
-    "description": "Floral arrangements and event decoration specialists."
+    "name": "Opera House Café",
+    "address": "1 Opera House, Sydney NSW",
+    "phone": "+61 2 9777 8888",
+    "website": "https://operacafe.example",
+    "image": "operacafe.png",
+    "membership": 2
   },
   {
-    "name": "Skyline Architects",
-    "address": "45 Bridge St, Sydney NSW",
-    "phone": "+61 2 5550 6666",
-    "website": "https://skylinearchitects.example",
-    "image": "skyline-architects.svg",
-    "membership": 1,
-    "description": "Architecture and design firm focusing on sustainable projects."
+    "name": "Bondi Surf Shop",
+    "address": "250 Campbell Parade, Bondi NSW",
+    "phone": "+61 2 9333 1122",
+    "website": "https://bondisurf.example",
+    "image": "bondisurf.png",
+    "membership": 1
   },
   {
-    "name": "Coastal Marketing",
-    "address": "Level 3, 90 King St, Sydney NSW",
-    "phone": "+61 2 5550 7777",
-    "website": "https://coastalmarketing.example",
-    "image": "coastal-marketing.svg",
-    "membership": 3,
-    "description": "Digital marketing agency helping local businesses grow online."
+    "name": "Southern Cross Consulting",
+    "address": "80 Martin Place, Sydney NSW",
+    "phone": "+61 2 9555 3344",
+    "website": "https://southerncross.example",
+    "image": "southerncross.png",
+    "membership": 3
   }
 ]

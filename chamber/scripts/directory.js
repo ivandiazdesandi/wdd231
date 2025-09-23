@@ -1,74 +1,55 @@
-// Fetch members, render directory, toggle grid/list, dates, and mobile nav
-document.addEventListener("DOMContentLoaded", () => {
-  const directory = document.getElementById("directory");
-  const gridBtn = document.getElementById("gridBtn");
-  const listBtn = document.getElementById("listBtn");
-  const menuBtn = document.getElementById("menu");
-  const navlist = document.getElementById("navlist");
-  const DATA_URL = "./data/members.json";
+// scripts/directory.js
+const dataURL = location.hostname.includes('github.io')
+  ? 'https://ivandiazdesandi.github.io/wdd231/chamber/data/members.json'
+  : 'data/members.json';
 
-  // Hamburger for small screens
-  if (menuBtn && navlist) {
-    menuBtn.addEventListener("click", () => {
-      const open = navlist.classList.toggle("open");
-      menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
-    });
+const directory = document.getElementById('directory');
+const btnGrid = document.getElementById('btnGrid');
+const btnList = document.getElementById('btnList');
+
+async function loadMembers() {
+  try {
+    const res = await fetch(dataURL, { cache: 'no-store' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    renderGrid(data.members);
+    wireViewButtons(data.members);
+  } catch (err) {
+    directory.innerHTML = `<p class="error">Could not load member data. ${err.message}</p>`;
   }
+}
 
-  // Load + render members
-  async function loadMembers(view = "grid") {
-    try {
-      const res = await fetch(`${DATA_URL}?v=${Date.now()}`); // cache-bust while testing
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-      renderMembers(data, view);
-    } catch (e) {
-      console.error("Member data fetch failed:", e);
-      directory.innerHTML = `<p class="error">Could not load member data. ${e.message}</p>`;
-      directory.className = ""; // avoid layout confusion
-    }
-  }
+function renderGrid(members) {
+  directory.className = 'grid';
+  directory.innerHTML = members.map(m => `
+    <article class="card">
+      <img src="images/${m.image}" alt="${m.name} logo" loading="lazy" width="160" height="160">
+      <h3>${m.name}</h3>
+      <p>${m.address}</p>
+      <p>${m.phone}</p>
+      <a href="${m.url}" target="_blank" rel="noopener">Visit website</a>
+      <p class="tier tier-${m.membership}">Tier ${m.membership}</p>
+    </article>
+  `).join('');
+}
 
-  function renderMembers(members, view) {
-    directory.className = (view === "grid") ? "cards" : "list";
-    directory.innerHTML = "";
+function renderList(members) {
+  directory.className = 'list';
+  directory.innerHTML = `
+    <ul class="list-plain">
+      ${members.map(m => `
+        <li>
+          <span>${m.name}</span>
+          <span>${m.phone}</span>
+          <a href="${m.url}" target="_blank" rel="noopener">${m.url}</a>
+        </li>
+      `).join('')}
+    </ul>`;
+}
 
-    members.forEach((m) => {
-      const el = document.createElement("div");
-      el.className = (view === "grid") ? "member-card" : "member-list";
-      el.innerHTML = `
-        <img src="./images/${m.image}" alt="${m.name} logo">
-        <h3>${m.name}</h3>
-        <p>${m.address}</p>
-        <p>${m.phone}</p>
-        <a href="${m.website}" target="_blank" rel="noopener">Visit Website</a>
-        <p><strong>Membership:</strong> ${m.membership === 3 ? "Gold" : (m.membership === 2 ? "Silver" : "Member")}</p>
-        <p>${m.description}</p>
-      `;
-      directory.appendChild(el);
-    });
-  }
+function wireViewButtons(members) {
+  btnGrid.onclick = () => renderGrid(members);
+  btnList.onclick = () => renderList(members);
+}
 
-  // Toggle buttons
-  gridBtn?.addEventListener("click", () => {
-    gridBtn.classList.add("active");
-    listBtn?.classList.remove("active");
-    loadMembers("grid");
-  });
-
-  listBtn?.addEventListener("click", () => {
-    listBtn.classList.add("active");
-    gridBtn?.classList.remove("active");
-    loadMembers("list");
-  });
-
-  // Footer dates
-  const yearSpan = document.getElementById("currentyear");
-  if (yearSpan) yearSpan.textContent = new Date().getFullYear();
-
-  const lastModified = document.getElementById("lastModified");
-  if (lastModified) lastModified.textContent = `Last Modified: ${document.lastModified}`;
-
-  // Initial render
-  loadMembers();
-});
+loadMembers();
