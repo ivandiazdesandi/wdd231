@@ -1,58 +1,58 @@
 [
   {
-    "name": "Sydney Web Solutions",
-    "address": "100 George St, Sydney NSW",
-    "phone": "+61 2 9000 1234",
-    "website": "https://sydneywebsolutions.example",
-    "image": "sydneyweb.png",
-    "membership": 3
+    "name": "Bondi Fitness",
+    "address": "12 Hall St, Bondi NSW 2026",
+    "phone": "+61 2 8000 1100",
+    "website": "https://bondifitness.example",
+    "image": "images/bondi-fitness.svg",
+    "membershipLevel": 3
   },
   {
-    "name": "Harbour Finance",
-    "address": "45 Pitt St, Sydney NSW",
-    "phone": "+61 2 9555 6789",
-    "website": "https://harbourfinance.example",
-    "image": "harbourfinance.png",
-    "membership": 2
+    "name": "Coastal Marketing",
+    "address": "21 Campbell Parade, Bondi NSW 2026",
+    "phone": "+61 2 8123 4567",
+    "website": "https://coastalmarketing.example",
+    "image": "images/coastal-marketing.svg",
+    "membershipLevel": 2
   },
   {
-    "name": "Aussie Fitness",
-    "address": "200 Oxford St, Sydney NSW",
-    "phone": "+61 2 9333 2468",
-    "website": "https://aussiefitness.example",
-    "image": "aussiefitness.png",
-    "membership": 1
+    "name": "Harbour Café",
+    "address": "3 Circular Quay, Sydney NSW 2000",
+    "phone": "+61 2 9555 2211",
+    "website": "https://harbourcafe.example",
+    "image": "images/harbour-cafe.svg",
+    "membershipLevel": 1
   },
   {
-    "name": "Koala Tech",
-    "address": "75 Macquarie St, Sydney NSW",
-    "phone": "+61 2 9888 7654",
-    "website": "https://koalatech.example",
-    "image": "koalatech.png",
-    "membership": 3
+    "name": "Harbourside Florist",
+    "address": "Harbourside, Darling Harbour NSW",
+    "phone": "+61 2 8400 9876",
+    "website": "https://harboursideflorist.example",
+    "image": "images/harbourside-florist.svg",
+    "membershipLevel": 2
   },
   {
-    "name": "Opera House Café",
-    "address": "1 Opera House, Sydney NSW",
-    "phone": "+61 2 9777 8888",
-    "website": "https://operacafe.example",
-    "image": "operacafe.png",
-    "membership": 2
+    "name": "Opera Tech",
+    "address": "2 Macquarie St, Sydney NSW 2000",
+    "phone": "+61 2 9777 8899",
+    "website": "https://operatech.example",
+    "image": "images/opera-tech.svg",
+    "membershipLevel": 3
   },
   {
-    "name": "Bondi Surf Shop",
-    "address": "250 Campbell Parade, Bondi NSW",
+    "name": "Skyline Architects",
+    "address": "80 Martin Place, Sydney NSW 2000",
+    "phone": "+61 2 8650 7700",
+    "website": "https://skylinearchitects.example",
+    "image": "images/skyline-architects.svg",
+    "membershipLevel": 2
+  },
+  {
+    "name": "Sydney Bookstore",
+    "address": "145 Crown St, Surry Hills NSW 2010",
     "phone": "+61 2 9333 1122",
-    "website": "https://bondisurf.example",
-    "image": "bondisurf.png",
-    "membership": 1
-  },
-  {
-    "name": "Southern Cross Consulting",
-    "address": "80 Martin Place, Sydney NSW",
-    "phone": "+61 2 9555 3344",
-    "website": "https://southerncross.example",
-    "image": "southerncross.png",
-    "membership": 3
+    "website": "https://sydneybookstore.example",
+    "image": "images/sydney-bookstore.svg",
+    "membershipLevel": 1
   }
 ]
