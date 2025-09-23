@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Sydney Chamber of Commerce • Business Directory</title>
+  <meta name="description" content="Business member directory for the Sydney Chamber of Commerce with grid/list toggle." />
+  <meta name="author" content="Ivan Diaz de Sandi Alvarez" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" />
+
+  <!-- Open Graph (Facebook) -->
+  <meta property="og:title" content="Sydney Chamber of Commerce — Business Directory" />
+  <meta property="og:description" content="Explore local Sydney businesses. Switch between grid and list views." />
+  <meta property="og:image" content="https://ivandiazdesandi.github.io/wdd231/chamber/images/logo.svg" />
+  <meta property="og:url" content="https://ivandiazdesandi.github.io/wdd231/chamber/directory.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts (optional; safe, lightweight) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS (normalize first) -->
+  <link rel="stylesheet" href="./styles/normalize.css" />
+  <link rel="stylesheet" href="./styles/small.css" />
+  <link rel="stylesheet" href="./styles/larger.css" />
+
+  <!-- Script -->
+  <script src="./scripts/directory.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./directory.html">
+      <img src="./images/logo.svg" alt="Sydney Chamber of Commerce logo" width="40" height="40" />
+      <span>Sydney Chamber of Commerce</span>
+    </a>
+
+    <button id="menu" aria-label="Menu" aria-expanded="false">☰</button>
+
+    <nav class="site-nav">
+      <ul id="navlist">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./discover.html">Discover</a></li>
+        <li><a class="active" href="./directory.html">Directory</a></li>
+        <li><a href="./join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Business Directory</h1>
+
+    <div class="view-toggle" role="group" aria-label="Directory view">
+      <button id="gridBtn" class="active" aria-pressed="true">Grid</button>
+      <button id="listBtn" aria-pressed="false">List</button>
+    </div>
+
+    <!-- JS will fill this -->
+    <section id="directory" class="cards" aria-live="polite"></section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="contact">
+      Sydney Chamber of Commerce • 100 George St, Sydney NSW • info@sydneychamber.example • (+61) 2 5550 0000
+    </p>
+    <p>© <span id="currentyear"></span> • Ivan Diaz de Sandi Alvarez • WDD 231</p>
+    <p id="lastModified"></p>
+  </footer>
+</body>
+</html>

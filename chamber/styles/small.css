@@ -1,0 +1,129 @@
+/* Mobile-first base styles */
+
+:root{
+  --brand:#1f3b74;   /* header/footer */
+  --brand-2:#0066cc; /* hover accents */
+  --text:#333;
+  --card:#ffffff;
+  --muted:#f3f5f9;
+  --border:#dcdfe6;
+}
+
+html, body { height: 100%; }
+
+body{
+  font-family: "Inter", Arial, sans-serif;
+  color: var(--text);
+  background: #fff;
+}
+
+/* ---------- Header & Nav ---------- */
+.site-header{
+  background: var(--brand);
+  color:#fff;
+  padding: .75rem 1rem;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+}
+
+.site-header .brand{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  color:#fff;
+  text-decoration:none;
+}
+
+.site-header .brand:visited{ color:#fff; }
+
+#menu{
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:1.6rem;
+  cursor:pointer;
+}
+
+.site-nav #navlist{
+  display:none;
+  flex-direction:column;
+  gap:.25rem;
+  background:#173261;
+  padding:.5rem;
+  border-radius:6px;
+  margin-top:.5rem;
+}
+
+.site-nav #navlist.open{ display:flex; }
+.site-nav a{ color:#fff; text-decoration:none; padding:.4rem .25rem; }
+.site-nav a.active{ font-weight:600; text-decoration:underline; }
+
+/* ---------- Main ---------- */
+main{ padding: 1rem; }
+
+h1{ margin: 0 0 1rem; }
+
+/* View toggle buttons */
+.view-toggle{
+  display:flex;
+  gap:.5rem;
+  margin-bottom:1rem;
+}
+.view-toggle button{
+  background: var(--brand);
+  color:#fff;
+  border:none;
+  padding:.5rem .85rem;
+  border-radius:6px;
+  cursor:pointer;
+}
+.view-toggle button:hover{ background: var(--brand-2); }
+.view-toggle .active{ outline:2px solid #fff; }
+
+/* ---------- Directory ---------- */
+#directory.cards{               /* grid mode */
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+#directory.list{                /* list mode */
+  display:block;
+}
+
+.member-card,
+.member-list{
+  background: var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,.06);
+}
+
+.member-card img{ max-width:110px; margin-bottom:.5rem; }
+
+.member-card h3,
+.member-list h3{ margin:.2rem 0 .4rem; }
+
+.member-list{
+  display:flex;
+  flex-direction:column;
+  margin-bottom:.8rem;
+}
+
+.member-list a{ color: var(--brand-2); text-decoration:none; }
+.member-list a:hover{ text-decoration:underline; }
+
+/* ---------- Footer ---------- */
+.site-footer{
+  margin-top:2rem;
+  background: var(--brand);
+  color:#fff;
+  text-align:center;
+  padding: 1rem;
+}
+.site-footer p{ margin:.25rem 0; }
+
+/* Utility */
+.error{ color:#b00020; }

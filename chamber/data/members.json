@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Harbour Cafe",
+    "address": "25 Circular Quay, Sydney NSW",
+    "phone": "+61 2 5550 1111",
+    "website": "https://harbourcafe.example",
+    "image": "harbour-cafe.svg",
+    "membership": 3,
+    "description": "A waterfront cafe serving fresh coffee and artisan pastries."
+  },
+  {
+    "name": "Opera Tech Solutions",
+    "address": "Suite 200, 123 George St, Sydney NSW",
+    "phone": "+61 2 5550 2222",
+    "website": "https://operatech.example",
+    "image": "opera-tech.svg",
+    "membership": 2,
+    "description": "Providing innovative IT and software services for businesses."
+  },
+  {
+    "name": "Bondi Fitness",
+    "address": "75 Bondi Rd, Sydney NSW",
+    "phone": "+61 2 5550 3333",
+    "website": "https://bondifitness.example",
+    "image": "bondi-fitness.svg",
+    "membership": 1,
+    "description": "Community gym and fitness center with modern equipment."
+  },
+  {
+    "name": "Sydney Bookstore",
+    "address": "88 Pitt St, Sydney NSW",
+    "phone": "+61 2 5550 4444",
+    "website": "https://sydneybooks.example",
+    "image": "sydney-bookstore.svg",
+    "membership": 3,
+    "description": "Independent bookstore offering a wide range of titles."
+  },
+  {
+    "name": "Harbourside Florist",
+    "address": "12 Market St, Sydney NSW",
+    "phone": "+61 2 5550 5555",
+    "website": "https://harboursideflorist.example",
+    "image": "harbourside-florist.svg",
+    "membership": 2,
+    "description": "Floral arrangements and event decoration specialists."
+  },
+  {
+    "name": "Skyline Architects",
+    "address": "45 Bridge St, Sydney NSW",
+    "phone": "+61 2 5550 6666",
+    "website": "https://skylinearchitects.example",
+    "image": "skyline-architects.svg",
+    "membership": 1,
+    "description": "Architecture and design firm focusing on sustainable projects."
+  },
+  {
+    "name": "Coastal Marketing",
+    "address": "Level 3, 90 King St, Sydney NSW",
+    "phone": "+61 2 5550 7777",
+    "website": "https://coastalmarketing.example",
+    "image": "coastal-marketing.svg",
+    "membership": 3,
+    "description": "Digital marketing agency helping local businesses grow online."
+  }
+]
