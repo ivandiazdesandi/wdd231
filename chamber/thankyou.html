@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank You • Sydney Chamber</title>
+  <meta name="description" content="Thank you for applying to join the Sydney Chamber of Commerce." />
+  <meta name="author" content="Ivan Diaz de Sandi Alvarez" />
+
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles/normalize.css" />
+  <link rel="stylesheet" href="styles/small.css" />
+  <link rel="stylesheet" href="styles/large.css" />
+
+  <style>
+    main.thanks { padding: 1rem clamp(1rem, 2vw, 2rem); }
+    .summary {
+      margin-top: 1rem;
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,.06);
+      max-width: 720px;
+    }
+    .summary dl { display: grid; grid-template-columns: 160px 1fr; gap: .5rem 1rem; }
+    .summary dt { font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <img src="images/logo.svg" alt="Sydney Chamber logo" width="28" height="28" />
+      <a class="brand" href="index.html">Sydney Chamber of Commerce</a>
+      <button id="menu" aria-label="Open menu" aria-expanded="false" aria-controls="nav">≡</button>
+      <nav id="nav" class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="thanks">
+    <h1>Thank you for applying!</h1>
+    <p>We received your application. Here is a summary of your submission:</p>
+
+    <section class="summary" aria-labelledby="summary-heading">
+      <h2 id="summary-heading" class="visually-hidden">Submission Summary</h2>
+      <dl>
+        <dt>First Name</dt><dd id="out-firstName">—</dd>
+        <dt>Last Name</dt><dd id="out-lastName">—</dd>
+        <dt>Email</dt><dd id="out-email">—</dd>
+        <dt>Mobile</dt><dd id="out-phone">—</dd>
+        <dt>Organization</dt><dd id="out-organization">—</dd>
+        <dt>Membership</dt><dd id="out-membership">—</dd>
+        <dt>Submitted</dt><dd id="out-timestamp">—</dd>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Sydney Chamber of Commerce • 100 George St, Sydney NSW • info@sydneychamber.example • (+61) 2 5550 0000</p>
+    <p>© <span id="currentyear"></span> • Ivan Diaz de Sandi Alvarez • WDD 231</p>
+    <p id="lastModified"></p>
+  </footer>
+
+  <script src="scripts/nav.js" defer></script>
+  <script defer>
+    // Footer dates
+    document.getElementById("currentyear").textContent = new Date().getFullYear();
+    document.getElementById("lastModified").textContent =
+      `Last Modified: ${document.lastModified}`;
+
+    // read query params
+    const q = new URLSearchParams(location.search);
+    const map = {
+      firstName: 'out-firstName',
+      lastName: 'out-lastName',
+      email: 'out-email',
+      phone: 'out-phone',
+      organization: 'out-organization',
+      membership: 'out-membership',
+      timestamp: 'out-timestamp'
+    };
+    Object.entries(map).forEach(([key, id]) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = q.get(key) || '—';
+    });
+  </script>
+</body>
+</html>
