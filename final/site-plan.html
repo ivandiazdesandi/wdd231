@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Site Plan — Sydney Coastal Trails</title>
+  <meta name="description" content="Site plan for the 'Sydney Coastal Trails' individual project: name, purpose, scenarios, color schema, typography, and wireframes." />
+  <meta name="author" content="Ivan Diaz de Sandi Alvarez" />
+
+  <!-- Open Graph (optional but helpful for later sharing) -->
+  <meta property="og:title" content="Site Plan — Sydney Coastal Trails" />
+  <meta property="og:description" content="Project plan outlining site purpose, scenarios, colors, typography, and wireframes." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== Color Tokens (used on this page too) ===== */
+    :root{
+      --ink: #1f2937;               /* near-black text */
+      --bg: #f7f9fc;                /* page background */
+      --brand: #1f3a5f;             /* deep navy (headers, accents) */
+      --accent: #ff6b6b;            /* coral (buttons/highlights) */
+      --muted: #e7eef8;             /* light brand tint for panels */
+    }
+
+    /* ===== Base ===== */
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    header{
+      background: var(--brand);
+      color: #fff;
+      padding: 2rem 1rem;
+    }
+    header .wrap, main .wrap, footer .wrap{
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    h1,h2,h3{
+      font-family: "Poppins", system-ui, sans-serif;
+      margin: .25rem 0 .75rem;
+      line-height: 1.2;
+    }
+    h1{font-size: clamp(1.8rem, 2.4vw + 1rem, 2.4rem)}
+    h2{font-size: clamp(1.4rem, 1.2vw + 1rem, 1.8rem); color: var(--brand)}
+    h3{font-size: 1.1rem; margin-top:.5rem}
+    p, li{font-size: 1rem}
+
+    .lead{opacity:.95; max-width: 60ch}
+    .tag{display:inline-block; padding:.25rem .5rem; border-radius:.5rem; background:#fff1f1; color:#601717; font-size:.9rem}
+
+    /* Sections */
+    section{
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin: 1rem 0 1.25rem;
+      box-shadow: 0 1px 0 rgba(0,0,0,.03);
+    }
+    .grid-2{
+      display:grid;
+      gap:1rem;
+    }
+    @media(min-width:760px){
+      .grid-2{grid-template-columns: 1fr 1fr}
+    }
+
+    /* Color swatches */
+    .swatches{display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap:.75rem}
+    .swatch{
+      border-radius: 10px; overflow:hidden; border:1px solid #e5e7eb; background:#fff;
+    }
+    .swatch .chip{height:70px}
+    .swatch .meta{padding:.6rem .8rem}
+    .chip.brand{background: var(--brand)}
+    .chip.accent{background: var(--accent)}
+    .chip.bg{background: var(--bg)}
+    .chip.muted{background: var(--muted)}
+    .chip.ink{background: var(--ink)}
+
+    /* Typography samples */
+    .type-card{border:1px dashed #d1d5db; border-radius:10px; padding:.75rem}
+    .type-sample{margin:.25rem 0; font-size: clamp(1rem, .6vw + .9rem, 1.125rem)}
+    .type-sample.heading{font-family:"Poppins"; font-weight:700; color:var(--brand); font-size: clamp(1.25rem, 1vw + 1.1rem, 1.5rem)}
+    .type-sample.body{font-family:"Inter"}
+
+    /* Wireframes (simple labeled boxes) */
+    .wireframes{display:grid; gap:1rem}
+    @media(min-width:860px){
+      .wireframes{grid-template-columns: 1fr 1fr}
+    }
+    .phone, .desktop{
+      background: var(--muted);
+      border-radius: 12px;
+      padding: .75rem;
+    }
+    .frame{
+      border: 2px dashed #9fb4d6;
+      background: #fff;
+      border-radius: 10px;
+      padding: .75rem;
+      min-height: 380px;
+      display:grid;
+      gap:.5rem;
+    }
+    .wf-box{
+      border: 2px solid #c6d6ef;
+      border-radius: 8px;
+      background: #fafdff;
+      padding:.4rem .6rem;
+      font-size:.9rem;
+    }
+    .wf-hero{min-height:80px; background: #eaf3ff}
+    .wf-row{display:grid; gap:.5rem}
+    .wf-cards{grid-template-columns: 1fr}
+    .wf-footer{min-height:40px}
+    @media(min-width:600px){
+      .wf-cards{grid-template-columns: repeat(3, 1fr)}
+    }
+    .note{font-size:.92rem; color:#4b5563}
+
+    footer{
+      margin-top: 1rem;
+      background: #0f2542;
+      color:#cfe0ff;
+      padding: 1.25rem 1rem;
+      font-size:.95rem;
+    }
+    footer a{color:#fff; text-underline-offset: 2px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Individual Project Site Plan</h1>
+      <p class="lead">
+        Proposed website: <strong>Sydney Coastal Trails</strong> — a compact guide to Sydney’s best
+        seaside walks, lookouts, and practical tips. Author: <strong>Ivan Diaz de Sandi Alvarez</strong> (from Mexico, living in Sydney, Australia).
+      </p>
+      <span class="tag">Planning Document</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- Site Name -->
+    <section id="site-name">
+      <h2>Site Name</h2>
+      <p><strong>Sydney Coastal Trails</strong></p>
+      <p>
+        This name is short, descriptive, and clear about the focus: discovering and planning
+        <em>coastal walks in Sydney</em>. It aligns well with search intent (e.g., “Sydney coastal walks”, “best coastal trails in Sydney”).
+      </p>
+      <p class="note"><strong>Optional domain idea:</strong> sydneycoastaltrails.com (or .au if available)</p>
+    </section>
+
+    <!-- Site Purpose -->
+    <section id="purpose">
+      <h2>Site Purpose</h2>
+      <p>
+        Provide a friendly hub for locals and visitors to explore Sydney’s coastal walks:
+        trail highlights, difficulty, distance, facilities, transport tips, and safety/weather notes.
+        Users can browse featured trails, save favorites (local storage), and view trail details in a modal.
+      </p>
+    </section>
+
+    <!-- Scenarios -->
+    <section id="scenarios">
+      <h2>Scenarios (User Questions)</h2>
+      <ul>
+        <li>“Which beginner-friendly coastal trails can I do in under 2 hours near Bondi?”</li>
+        <li>“What’s the current weather and 3-day outlook for a Saturday morning walk?”</li>
+        <li>“Do any trails have public transport access and coffee shops nearby?”</li>
+      </ul>
+    </section>
+
+    <!-- Color Schema -->
+    <section id="colors">
+      <h2>Color Schema</h2>
+      <div class="swatches">
+        <div class="swatch">
+          <div class="chip brand"></div>
+          <div class="meta"><strong>Brand (Deep Navy)</strong><br>#1F3A5F — headings, header, key accents</div>
+        </div>
+        <div class="swatch">
+          <div class="chip accent"></div>
+          <div class="meta"><strong>Accent (Coral)</strong><br>#FF6B6B — buttons/emphasis states</div>
+        </div>
+        <div class="swatch">
+          <div class="chip bg"></div>
+          <div class="meta"><strong>Background</strong><br>#F7F9FC — page background</div>
+        </div>
+        <div class="swatch">
+          <div class="chip muted"></div>
+          <div class="meta"><strong>Muted Panel</strong><br>#E7EEF8 — wireframe panels / subtle sections</div>
+        </div>
+        <div class="swatch">
+          <div class="chip ink"></div>
+          <div class="meta"><strong>Body Text</strong><br>#1F2937 — paragraph text</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Typography -->
+    <section id="typography" class="grid-2">
+      <div>
+        <h2>Typography</h2>
+        <div class="type-card">
+          <h3>Headings — Poppins (700/500)</h3>
+          <p class="type-sample heading">Sydney Coastal Trails — Explore the Shoreline</p>
+          <p class="note">Used for: H1–H3 and key UI labels.</p>
+        </div>
+        <div class="type-card" style="margin-top:.75rem">
+          <h3>Body — Inter (400/500)</h3>
+          <p class="type-sample body">Clear, modern text for paragraphs, captions, and lists.</p>
+          <p class="note">Used for: body copy, lists, buttons, and small UI text.</p>
+        </div>
+      </div>
+      <div>
+        <h2>Why these fonts?</h2>
+        <p>
+          <strong>Poppins</strong> provides approachable, rounded headings that pair well with map/travel content.
+          <strong>Inter</strong> is highly readable on mobile and desktop and remains visually neutral.
+        </p>
+      </div>
+    </section>
+
+    <!-- Wireframes -->
+    <section id="wireframes">
+      <h2>Wireframe — Home Page</h2>
+      <p class="note">Simple layout concepts for two views. Content boxes are representative only.</p>
+      <div class="wireframes">
+
+        <!-- Mobile -->
+        <div class="phone">
+          <h3>Mobile (≤ 480–600px)</h3>
+          <div class="frame">
+            <div class="wf-box">Top Bar: Logo • Hamburger</div>
+            <div class="wf-box wf-hero">Hero: Coast image + CTA “Find a Trail”</div>
+            <div class="wf-box">Quick Filters (Distance/Difficulty)</div>
+            <div class="wf-row wf-cards">
+              <div class="wf-box">Trail Card</div>
+              <div class="wf-box">Trail Card</div>
+              <div class="wf-box">Trail Card</div>
+            </div>
+            <div class="wf-box">Spotlight: Weekend Pick (modal link)</div>
+            <div class="wf-box">Weather Widget (current + 3-day)</div>
+            <div class="wf-box wf-footer">Footer: Links • © • Video</div>
+          </div>
+        </div>
+
+        <!-- Desktop -->
+        <div class="desktop">
+          <h3>Desktop (≥ 900px)</h3>
+          <div class="frame">
+            <div class="wf-box">Header: Logo • Horizontal Nav • CTA</div>
+            <div class="wf-box wf-hero">Hero (wide) with tagline + search/filter</div>
+            <div class="wf-row" style="grid-template-columns: 2fr 1fr; gap:.5rem">
+              <div class="wf-row wf-cards">
+                <div class="wf-box">Trail Card</div>
+                <div class="wf-box">Trail Card</div>
+                <div class="wf-box">Trail Card</div>
+              </div>
+              <div class="wf-row" style="grid-template-rows: auto auto 1fr; gap:.5rem">
+                <div class="wf-box">Weather Widget</div>
+                <div class="wf-box">Spotlight (modal)</div>
+                <div class="wf-box">Newsletter / Tips</div>
+              </div>
+            </div>
+            <div class="wf-box wf-footer">Footer: Links • © • Attributions • Video</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Next Steps (helps you align with final requirements later) -->
+    <section id="notes">
+      <h2>Notes for Build (next week)</h2>
+      <ul>
+        <li>Data source: local <code>trails.json</code> (≥15 trails). Show ≥4 properties per item (name, suburb, distance, difficulty, photo).</li>
+        <li>Fetch with <code>async/await</code> + <code>try…catch</code>. Render cards with template literals and array methods (<code>map</code>/<code>filter</code>).</li>
+        <li>Modal for “trail details”.</li>
+        <li>Local storage for “favorites”.</li>
+        <li>Lazy-load trail images (<code>loading="lazy"</code>).</li>
+        <li>Responsive nav: hamburger → vertical; desktop → horizontal.</li>
+        <li>Wayfinding: highlight current page in nav.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span id="year"></span> • Ivan Diaz de Sandi Alvarez • Sydney, Australia</p>
+      <p>Last modified: <span id="mod"></span></p>
+    </div>
+  </footer>
+
+  <script>
+    // small utility for footer info
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('mod').textContent = document.lastModified;
+  </script>
+</body>
+</html>
