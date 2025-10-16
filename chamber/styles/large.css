@@ -38,3 +38,33 @@
 @media screen and (min-width: 960px){
   #directory.cards{ grid-template-columns: repeat(3, 1fr); }
 }
+
+/* ===== Discover Page: Medium Screens ===== */
+@media (min-width: 641px) {
+  .discover-grid {
+    grid-template-areas:
+      "card1 card2"
+      "card3 card4"
+      "card5 card6"
+      "card7 card8";
+  }
+
+  .card img:hover {
+    filter: brightness(0.9);
+    transform: scale(1.02);
+  }
+}
+
+/* ===== Discover Page: Large Screens ===== */
+@media (min-width: 1025px) {
+  .discover-grid {
+    grid-template-areas:
+      "card1 card2 card3 card4"
+      "card5 card6 card7 card8";
+  }
+
+  .card img:hover {
+    transform: scale(1.05);
+    filter: saturate(1.2);
+  }
+}

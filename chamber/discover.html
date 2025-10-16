@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover Sydney — Explore the best attractions, parks, museums, and landmarks around the Sydney Chamber of Commerce area.">
+  <meta name="author" content="Ivan Diaz de Sandi Alvarez">
+  <title>Discover Sydney | Chamber of Commerce</title>
+  <link rel="icon" href="images/favicon.svg">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/medium.css">
+  <link rel="stylesheet" href="styles/large.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo-nav">
+      <img src="images/logo.svg" alt="Sydney Chamber of Commerce Logo" class="logo">
+      <h1>Sydney Chamber of Commerce</h1>
+    </div>
+    <nav>
+      <button id="menuBtn" aria-label="menu button">☰</button>
+      <ul id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a class="active" href="discover.html">Discover</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="visitor-message" id="visitMsg"></section>
+
+    <h2 class="page-title">Discover Sydney</h2>
+    <p class="intro">Explore eight of Sydney’s most iconic locations — from beaches to landmarks and hidden gems that make our city thrive.</p>
+
+    <div id="discoverGrid" class="discover-grid"></div>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Sydney Chamber of Commerce | Last Modified: <span id="mod"></span></p>
+  </footer>
+
+  <script src="scripts/discover.js" type="module"></script>
+</body>
+</html>

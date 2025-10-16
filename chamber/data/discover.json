@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Bondi Beach",
+    "address": "Queen Elizabeth Dr, Bondi Beach NSW 2026",
+    "description": "Sydney’s most famous beach, known for its surf, coastal walks, and vibrant cafes.",
+    "image": "images/bondi.jpg"
+  },
+  {
+    "name": "Sydney Opera House",
+    "address": "Bennelong Point, Sydney NSW 2000",
+    "description": "A UNESCO World Heritage site and the heart of Sydney’s performing arts scene.",
+    "image": "images/opera.jpg"
+  },
+  {
+    "name": "Royal Botanic Garden",
+    "address": "Mrs Macquaries Rd, Sydney NSW 2000",
+    "description": "A peaceful green space offering stunning harbour views and native flora displays.",
+    "image": "images/garden.jpg"
+  },
+  {
+    "name": "Taronga Zoo",
+    "address": "Bradleys Head Rd, Mosman NSW 2088",
+    "description": "Home to over 4,000 animals with breathtaking views of Sydney Harbour.",
+    "image": "images/zoo.jpg"
+  },
+  {
+    "name": "The Rocks",
+    "address": "The Rocks, Sydney NSW 2000",
+    "description": "Sydney’s oldest neighbourhood with cobblestone streets, markets, and pubs.",
+    "image": "images/rocks.webp"
+  },
+  {
+    "name": "Darling Harbour",
+    "address": "Darling Harbour, Sydney NSW 2000",
+    "description": "A lively waterfront precinct with restaurants, museums, and entertainment venues.",
+    "image": "images/darling.jpg"
+  },
+  {
+    "name": "Blue Mountains",
+    "address": "Blue Mountains NSW 2780",
+    "description": "A natural wonderland of cliffs, waterfalls, and eucalyptus forests, just two hours from Sydney.",
+    "image": "images/bluemountains.webp"
+  },
+  {
+    "name": "Barangaroo Reserve",
+    "address": "Hickson Rd, Barangaroo NSW 2000",
+    "description": "An urban park celebrating Aboriginal culture, sustainability, and stunning harbour views.",
+    "image": "images/barangaroo.jpg"
+  }
+]
