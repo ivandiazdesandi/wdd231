@@ -1,0 +1,167 @@
+[
+  {
+    "id": 1,
+    "name": "Bondi to Bronte",
+    "suburb": "Bondi",
+    "distance_km": 2.5,
+    "difficulty": "Easy",
+    "image": "images/trails/bondi-bronte.jpg",
+    "description": "Iconic cliff walk with ocean pools and sculptures in season.",
+    "transport": "Bus to Bondi Beach; return from Bronte.",
+    "long": "Mostly paved path with railings. Cafés at both ends, several lookouts, and beach access."
+  },
+  {
+    "id": 2,
+    "name": "Coogee to Maroubra",
+    "suburb": "Coogee",
+    "distance_km": 5.0,
+    "difficulty": "Moderate",
+    "image": "images/trails/coogee-maroubra.jpeg",
+    "description": "Coastal headlands, rock platforms, and quieter beaches.",
+    "transport": "Buses serve both Coogee and Maroubra.",
+    "long": "Undulating sections with stairs. Great sunrise views; bring water."
+  },
+  {
+    "id": 3,
+    "name": "Hermitage Foreshore Track",
+    "suburb": "Vaucluse",
+    "distance_km": 1.8,
+    "difficulty": "Easy",
+    "image": "images/trails/hermitage.jpg",
+    "description": "Harbour-side path with city skyline views.",
+    "transport": "Bus to Nielsen Park.",
+    "long": "Shady sections and small beaches; family friendly."
+  },
+  {
+    "id": 4,
+    "name": "Manly to Shelly Beach",
+    "suburb": "Manly",
+    "distance_km": 1.5,
+    "difficulty": "Easy",
+    "image": "images/trails/manly-shelly.jpg",
+    "description": "Short promenade to a protected snorkelling beach.",
+    "transport": "Ferry to Manly, then walk.",
+    "long": "Accessible path; cafés and amenities nearby."
+  },
+  {
+    "id": 5,
+    "name": "Spit Bridge to Manly",
+    "suburb": "Seaforth/Manly",
+    "distance_km": 10.0,
+    "difficulty": "Moderate",
+    "image": "images/trails/spit-manly.jpg",
+    "description": "Classic harbour track through bush and beaches.",
+    "transport": "Buses to Spit Bridge; return from Manly ferry.",
+    "long": "Uneven bush track with stairs; many bays and lookouts."
+  },
+  {
+    "id": 6,
+    "name": "Barrenjoey Lighthouse",
+    "suburb": "Palm Beach",
+    "distance_km": 2.0,
+    "difficulty": "Moderate",
+    "image": "images/trails/barrenjoey.jpg",
+    "description": "Short steep climb to a lighthouse with sweeping views.",
+    "transport": "Bus to Palm Beach.",
+    "long": "Two routes: steep stairs or gentler access trail."
+  },
+  {
+    "id": 7,
+    "name": "South Head Heritage Trail",
+    "suburb": "Watsons Bay",
+    "distance_km": 1.8,
+    "difficulty": "Easy",
+    "image": "images/trails/south-head.jpg",
+    "description": "Hornby Lighthouse, cliff views, and harbour entrance.",
+    "transport": "Ferry/bus to Watsons Bay.",
+    "long": "Mostly flat with some stairs; excellent sunset spot."
+  },
+  {
+    "id": 8,
+    "name": "Cronulla Esplanade",
+    "suburb": "Cronulla",
+    "distance_km": 6.0,
+    "difficulty": "Easy",
+    "image": "images/trails/cronulla-esplanade.webp",
+    "description": "Oceanfront path with rock pools and surf beaches.",
+    "transport": "Train to Cronulla.",
+    "long": "Level concrete path; plenty of water taps and cafés."
+  },
+  {
+    "id": 9,
+    "name": "Royal National Park Coast Track (section)",
+    "suburb": "Royal NP",
+    "distance_km": 8.0,
+    "difficulty": "Hard",
+    "image": "images/trails/rnp-coast.jpg",
+    "description": "Dramatic cliffs, heathland, and remote beaches.",
+    "transport": "Train to Cronulla + ferry/bus options; car best.",
+    "long": "Exposure to sun and wind; carry water, check weather."
+  },
+  {
+    "id": 10,
+    "name": "Balls Head to Waverton",
+    "suburb": "Waverton",
+    "distance_km": 3.0,
+    "difficulty": "Moderate",
+    "image": "images/trails/balls-head.jpg",
+    "description": "Harbour bushland with industrial heritage sites.",
+    "transport": "Train to Waverton.",
+    "long": "Formed tracks with some stairs; city views."
+  },
+  {
+    "id": 11,
+    "name": "Berry Island Reserve",
+    "suburb": "Wollstonecraft",
+    "distance_km": 1.0,
+    "difficulty": "Easy",
+    "image": "images/trails/berry-island.jpg",
+    "description": "Short loop with Aboriginal heritage and harbour vistas.",
+    "transport": "Train to Wollstonecraft.",
+    "long": "Great picnic spot; playground and facilities."
+  },
+  {
+    "id": 12,
+    "name": "North Head Sanctuary Loop",
+    "suburb": "Manly",
+    "distance_km": 9.5,
+    "difficulty": "Moderate",
+    "image": "images/trails/north-head.jpg",
+    "description": "Heathland, lookouts and historic military sites.",
+    "transport": "Ferry to Manly, bus up the hill.",
+    "long": "Some sandy sections; spectacular harbour mouth views."
+  },
+  {
+    "id": 13,
+    "name": "La Perouse to Cape Banks",
+    "suburb": "La Perouse",
+    "distance_km": 6.5,
+    "difficulty": "Moderate",
+    "image": "images/trails/cape-banks.jpg",
+    "description": "Coastal heath, golf course edges and dramatic headlands.",
+    "transport": "Buses to La Perouse.",
+    "long": "Exposed track with little shade; watch surf conditions."
+  },
+  {
+    "id": 14,
+    "name": "Bradleys Head to Chowder Bay",
+    "suburb": "Mosman",
+    "distance_km": 4.0,
+    "difficulty": "Easy",
+    "image": "images/trails/bradleys-chowder.jpeg",
+    "description": "Harbour foreshore with city skyline viewpoints.",
+    "transport": "Bus to Taronga Zoo or Clifton Gardens.",
+    "long": "Mostly formed track; good for families."
+  },
+  {
+    "id": 15,
+    "name": "Gordon’s Bay Coastal Walk",
+    "suburb": "Clovelly",
+    "distance_km": 1.2,
+    "difficulty": "Easy",
+    "image": "images/trails/gordons-bay.jpeg",
+    "description": "Tucked-away bay with an underwater nature trail.",
+    "transport": "Buses to Clovelly/Coogee.",
+    "long": "Rocky sections; bring snorkel in calm conditions."
+  }
+]

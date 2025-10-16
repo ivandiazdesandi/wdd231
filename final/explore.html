@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Explore Trails — Sydney Coastal Trails</title>
+  <meta name="description" content="Browse all Sydney coastal trails. Filter by suburb, difficulty, and search by name." />
+  <meta name="author" content="Ivan Diaz de Sandi Alvarez" />
+  <meta property="og:title" content="Explore Trails — Sydney Coastal Trails" />
+  <meta property="og:description" content="All trails with filters and details." />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/site.css">
+</head>
+<body>
+  <header>
+    <div class="header-wrap">
+      <a class="brand" href="index.html" aria-label="Home"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 12c5-6 13-6 18 0-5 6-13 6-18 0Z"/></svg><span>Sydney Coastal Trails</span></a>
+      <button class="nav-toggle" aria-label="Menu">☰</button>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="section">
+      <h1>All Coastal Trails</h1>
+      <div class="filters">
+        <input id="q" type="search" placeholder="Search trails… (name or text)" aria-label="Search trails">
+        <select id="difficulty" aria-label="Filter by difficulty">
+          <option value="all">All difficulties</option>
+          <option>Easy</option>
+          <option>Moderate</option>
+          <option>Hard</option>
+        </select>
+        <select id="suburb" aria-label="Filter by suburb">
+          <option value="all">All suburbs</option>
+        </select>
+      </div>
+
+      <div id="trail-list" class="grid cols-3" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span id="year"></span> • Sydney Coastal Trails • <a href="https://youtu.be/" target="_blank" rel="noopener">Project video</a></p>
+    </div>
+  </footer>
+
+  <script type="module" src="scripts/main-explore.js"></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

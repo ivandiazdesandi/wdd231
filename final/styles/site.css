@@ -1,0 +1,85 @@
+/* ===== Sydney Coastal Trails – Global Styles (colors & type from plan) ===== */
+:root{
+  --ink:#1f2937;        /* body text */
+  --bg:#f7f9fc;         /* page bg */
+  --brand:#1f3a5f;      /* headings / header */
+  --accent:#ff6b6b;     /* buttons */
+  --muted:#e7eef8;      /* panels */
+  --ring: rgba(31,58,95,.35);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--ink); background:var(--bg); line-height:1.6;
+}
+
+h1,h2,h3{font-family:"Poppins", system-ui, sans-serif; line-height:1.2; margin:.25rem 0 .6rem}
+h1{font-size:clamp(1.8rem,2.4vw+1rem,2.4rem)}
+h2{font-size:clamp(1.4rem,1.2vw+1rem,1.8rem); color:var(--brand)}
+h3{font-size:1.15rem}
+
+/* Header / Nav */
+header{background:var(--brand); color:#fff}
+.header-wrap{max-width:1100px; margin:0 auto; padding:.9rem 1rem; display:flex; align-items:center; gap:1rem}
+.brand{display:flex; align-items:center; gap:.6rem; text-decoration:none; color:#fff}
+.brand svg{width:28px;height:28px}
+.brand span{font-weight:700; letter-spacing:.2px}
+.nav-toggle{margin-left:auto; background:none; border:none; color:#fff; font-size:1.6rem; cursor:pointer}
+nav ul{list-style:none; margin:0; padding:0; display:none; flex-direction:column; gap:.25rem}
+nav a{color:#e7eef8; text-decoration:none; padding:.5rem .6rem; border-radius:.5rem; display:block}
+nav a[aria-current="page"]{background:#0f2542; color:#fff}
+nav a:focus-visible{outline:3px solid #fff; outline-offset:2px}
+
+/* Large nav */
+@media(min-width:800px){
+  .nav-toggle{display:none}
+  nav ul{display:flex; margin-left:auto; flex-direction:row; gap:.25rem}
+}
+
+/* Main wrapper & utility */
+.wrap{max-width:1100px; margin:0 auto; padding:1rem}
+.section{background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:1rem; box-shadow:0 1px 0 rgba(0,0,0,.04); margin:1rem 0}
+
+/* Hero */
+.hero{display:grid; gap:1rem; align-items:center}
+.hero .cta{display:inline-block; background:var(--accent); color:#fff; text-decoration:none; padding:.7rem 1rem; border-radius:.7rem; font-weight:600}
+.hero .cta:focus-visible{outline:4px solid var(--ring)}
+.hero img{width:100%; height:260px; object-fit:cover; border-radius:12px;}
+
+/* Cards */
+.grid{display:grid; gap:1rem}
+.grid.cols-3{grid-template-columns:1fr}
+@media(min-width:700px){ .grid.cols-3{grid-template-columns:repeat(2,1fr)} }
+@media(min-width:1000px){ .grid.cols-3{grid-template-columns:repeat(3,1fr)} }
+
+.card{border:1px solid #e5e7eb; border-radius:12px; background:#fff; overflow:hidden; display:grid}
+.card img{width:100%; height:180px; object-fit:cover}
+.card .p{padding:.8rem}
+.meta{font-size:.92rem; color:#475569}
+.badge{display:inline-block; background:var(--muted); padding:.2rem .5rem; border-radius:.5rem; font-size:.85rem; margin-right:.3rem}
+.btn{display:inline-block; padding:.55rem .8rem; border-radius:.6rem; font-weight:600; text-decoration:none; cursor:pointer; border:1px solid transparent}
+.btn.primary{background:var(--accent); color:#fff}
+.btn.ghost{border-color:#cbd5e1; color:#1e293b; background:#fff}
+
+/* Explore page filters */
+.filters{display:grid; gap:.6rem; margin-bottom:.8rem}
+@media(min-width:700px){ .filters{grid-template-columns:2fr 1fr 1fr} }
+input[type="search"], select{
+  padding:.6rem .7rem; border-radius:.6rem; border:1px solid #cbd5e1; background:#fff;
+}
+input[type="search"]:focus, select:focus{outline:3px solid var(--ring); border-color:#94a3b8}
+
+/* Modal */
+dialog.modal{border:none; border-radius:14px; padding:0; width:min(680px, 95vw); box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.modal header{background:var(--brand); color:#fff; padding:.9rem 1rem; border-radius:14px 14px 0 0}
+.modal .content{padding:1rem}
+.modal .actions{display:flex; gap:.5rem; padding:0 1rem 1rem}
+.modal img{width:100%; height:220px; object-fit:cover; border-radius:10px}
+dialog::backdrop{background:rgba(15,37,66,.55)}
+
+/* Footer */
+footer{background:#0f2542; color:#cfe0ff; margin-top:1rem}
+footer .wrap{display:grid; gap:.4rem}
+footer a{color:#fff; text-underline-offset:2px}

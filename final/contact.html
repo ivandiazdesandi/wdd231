@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Sydney Coastal Trails</title>
+  <meta name="description" content="Send a message or suggestion about Sydney coastal walks." />
+  <meta name="author" content="Ivan Diaz de Sandi Alvarez" />
+  <meta property="og:title" content="Contact — Sydney Coastal Trails" />
+  <meta property="og:description" content="Contact form for the project." />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/site.css">
+  <style>
+    form{display:grid; gap:.75rem}
+    label{display:grid; gap:.35rem}
+    input, textarea{padding:.65rem .75rem; border-radius:.6rem; border:1px solid #cbd5e1; background:#fff}
+    textarea{min-height:140px; resize:vertical}
+    input:focus, textarea:focus{outline:3px solid var(--ring); border-color:#94a3b8}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-wrap">
+      <a class="brand" href="index.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 12c5-6 13-6 18 0-5 6-13 6-18 0Z"/></svg><span>Sydney Coastal Trails</span></a>
+      <button class="nav-toggle" aria-label="Menu">☰</button>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="section">
+      <h1>Contact</h1>
+      <p>Questions, trail suggestions, or corrections? Send a message.</p>
+
+      <form method="get" action="thankyou.html">
+        <label>First name
+          <input name="first" autocomplete="given-name" required title="Your first name">
+        </label>
+        <label>Last name
+          <input name="last" autocomplete="family-name" required title="Your last name">
+        </label>
+        <label>Email
+          <input type="email" name="email" autocomplete="email" required placeholder="you@example.com" title="Valid email">
+        </label>
+        <label>Message
+          <textarea name="message" title="Your message" required></textarea>
+        </label>
+        <input type="hidden" name="ts" id="ts">
+        <button class="btn primary" type="submit">Send message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span id="year"></span> • Sydney Coastal Trails • <a href="https://youtu.be/" target="_blank" rel="noopener">Project video</a></p>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { initNav } from './scripts/nav.js';
+    initNav('/final/contact.html');
+    document.getElementById('ts').value = new Date().toISOString();
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

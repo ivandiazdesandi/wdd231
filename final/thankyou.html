@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thanks — Sydney Coastal Trails</title>
+  <meta name="description" content="Thank you for contacting Sydney Coastal Trails." />
+  <meta name="author" content="Ivan Diaz de Sandi Alvarez" />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/site.css">
+</head>
+<body>
+  <header>
+    <div class="header-wrap">
+      <a class="brand" href="index.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 12c5-6 13-6 18 0-5 6-13 6-18 0Z"/></svg><span>Sydney Coastal Trails</span></a>
+      <button class="nav-toggle" aria-label="Menu">☰</button>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="section">
+      <h1>Thank you!</h1>
+      <p>We received your message. Here’s what you sent:</p>
+      <div id="results" class="section" style="background:var(--muted)"></div>
+      <p><a class="btn ghost" href="index.html">Back to Home</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span id="year"></span> • Sydney Coastal Trails</p>
+    </div>
+  </footer>
+
+  <script type="module" src="scripts/thankyou.js"></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

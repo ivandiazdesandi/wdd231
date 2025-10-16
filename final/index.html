@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sydney Coastal Trails — Explore the Shoreline</title>
+  <meta name="description" content="Discover Sydney’s best coastal walks. Browse trails by suburb, distance, and difficulty. Save favorites and view trail details." />
+  <meta name="author" content="Ivan Diaz de Sandi Alvarez" />
+  <meta property="og:title" content="Sydney Coastal Trails" />
+  <meta property="og:description" content="A compact guide to Sydney’s best seaside walks, lookouts, and tips." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/site.css">
+</head>
+<body>
+  <header>
+    <div class="header-wrap">
+      <a class="brand" href="index.html" aria-label="Sydney Coastal Trails home">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 12c5-6 13-6 18 0-5 6-13 6-18 0Z"/></svg>
+        <span>Sydney Coastal Trails</span>
+      </a>
+      <button class="nav-toggle" aria-label="Menu">☰</button>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="section hero">
+      <div>
+        <h1>Explore the Shoreline</h1>
+        <p>Find beginner-friendly to challenging coastal walks with distances, difficulty, transport tips and more.</p>
+        <a class="cta" href="explore.html">Find a Trail</a>
+        <div id="spotlight" class="meta" style="margin-top:.8rem"></div>
+      </div>
+      <img src="images/trails/hero.webp" alt="Sydney coast hero image">
+    </section>
+
+    <section class="section">
+      <h2>Featured Trails</h2>
+      <div id="featured" class="grid cols-3" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span id="year"></span> • Sydney Coastal Trails • <a href="https://youtu.be/" target="_blank" rel="noopener">Project video</a></p>
+      <p>Attributions • Images from your local assets • <a href="site-plan.html">Site plan</a></p>
+    </div>
+  </footer>
+
+  <script type="module" src="scripts/main-home.js"></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
