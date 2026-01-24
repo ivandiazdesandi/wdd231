@@ -33,10 +33,17 @@
     flex-wrap:wrap;
   }
   .site-footer p{ margin:.25rem .5rem; }
+
+  .directory.grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media screen and (min-width: 960px){
   #directory.cards{ grid-template-columns: repeat(3, 1fr); }
+  .directory.grid {
+  grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* ===== Discover Page: Medium Screens ===== */

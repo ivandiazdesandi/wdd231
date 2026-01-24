@@ -164,3 +164,60 @@ h1{ margin: 0 0 1rem; }
   padding: 0.5rem;
   border-radius: 8px;
 }
+
+.directory.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.directory.list {
+  display: block;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+
+.card h3 {
+  margin: 0.5rem 0;
+  color: #004466;
+}
+
+.card a {
+  color: #006699;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+.list-plain {
+  list-style: none;
+  padding: 0;
+}
+
+.list-plain li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.tier {
+  font-weight: 600;
+}
+
+.tier-3 {
+  color: #c9a227; /* Gold */
+}
+
+.tier-2 {
+  color: #999999; /* Silver */
+}
+
+.tier-1 {
+  color: #004466; /* Member */
+}
