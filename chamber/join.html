@@ -3,288 +3,205 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sydney Chamber of Commerce • Join</title>
+
+  <title>Sydney Chamber • Join</title>
   <meta name="description" content="Apply to join the Sydney Chamber of Commerce. Choose a membership level and submit your organization details." />
   <meta name="author" content="Ivan Diaz de Sandi Alvarez" />
 
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
-  <!-- Site CSS (your existing stack) -->
+
+  <!-- Social (Open Graph / Facebook) -->
+  <meta property="og:title" content="Sydney Chamber of Commerce — Join" />
+  <meta property="og:description" content="Join the Sydney Chamber and grow your local network." />
+  <meta property="og:image" content="https://ivandiazdesandi.github.io/wdd231/chamber/images/logo.svg" />
+  <meta property="og:url" content="https://ivandiazdesandi.github.io/wdd231/chamber/join.html" />
+
   <link rel="stylesheet" href="styles/normalize.css" />
   <link rel="stylesheet" href="styles/small.css" />
   <link rel="stylesheet" href="styles/large.css" />
-
-  <!-- Page-scoped, lightweight CSS for form, cards, modals, and a subtle intro animation -->
-  <style>
-    /* layout */
-    main.join {
-      display: grid;
-      gap: 2rem;
-      padding: 1rem clamp(1rem, 2vw, 2rem);
-    }
-    @media (min-width: 900px) {
-      main.join {
-        grid-template-columns: 1fr minmax(280px, 360px);
-        align-items: start;
-      }
-    }
-
-    /* form */
-    form.chamber-form {
-      display: grid;
-      gap: 1rem;
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 1.25rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,.06);
-    }
-    form.chamber-form label {
-      display: grid;
-      gap: .35rem;
-      font-weight: 600;
-    }
-    form.chamber-form input,
-    form.chamber-form textarea,
-    form.chamber-form select {
-      font: inherit;
-      padding: .7rem .8rem;
-      border: 1px solid #c9d2e1;
-      border-radius: 8px;
-      width: 100%;
-    }
-    form.chamber-form textarea { min-height: 110px; resize: vertical; }
-    form.chamber-form .actions { margin-top: .5rem; }
-    form.chamber-form button[type="submit"] {
-      appearance: none;
-      border: none;
-      background: #1f3c70;      /* matches your header/nav color */
-      color: #fff;
-      padding: .85rem 1.1rem;
-      border-radius: 10px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-    form.chamber-form button[type="submit"]:focus-visible { outline: 3px solid #89b4ff; outline-offset: 2px; }
-
-    /* membership cards (right column on desktop / below form on mobile) */
-    .levels {
-      display: grid;
-      gap: 1rem;
-    }
-    .level-card {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 1rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,.06);
-      border-left: 6px solid transparent;
-      opacity: 0;
-      transform: translateY(14px);
-      animation: rise .7s ease forwards;
-    }
-    .level-card:nth-child(1) { animation-delay: .05s; border-left-color: #6b7280; } /* NP – slate */
-    .level-card:nth-child(2) { animation-delay: .15s; border-left-color: #cd7f32; } /* Bronze */
-    .level-card:nth-child(3) { animation-delay: .25s; border-left-color: #b7b7b7; } /* Silver */
-    .level-card:nth-child(4) { animation-delay: .35s; border-left-color: #e0b100; } /* Gold  */
-    .level-card h3 { margin: 0 0 .25rem 0; }
-    .level-card p { margin: 0 0 .6rem 0; }
-    .level-card a {
-      display: inline-block;
-      text-decoration: underline;
-      font-weight: 600;
-    }
-    @keyframes rise {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* HTML <dialog> modals */
-    dialog {
-      border: none;
-      border-radius: 12px;
-      padding: 1rem 1.25rem;
-      max-width: 520px;
-      box-shadow: 0 28px 60px rgba(0,0,0,.25);
-    }
-    dialog::backdrop {
-      background: rgba(0,0,0,.45);
-      backdrop-filter: blur(2px);
-    }
-    .modal-actions {
-      margin-top: .75rem;
-      text-align: right;
-    }
-    .modal-actions button {
-      border: none;
-      border-radius: 8px;
-      padding: .55rem .8rem;
-      background: #1f3c70;
-      color: #fff;
-      font-weight: 700;
-      cursor: pointer;
-    }
-  </style>
 </head>
+
 <body>
+  <!-- SAME HEADER/NAV as your directory/home (so nav.js works) -->
   <header class="site-header">
-    <div class="wrap">
-      <img src="images/logo.svg" alt="Sydney Chamber logo" width="28" height="28" />
-      <a class="brand" href="index.html">Sydney Chamber of Commerce</a>
-      <button id="menu" aria-label="Open menu" aria-expanded="false" aria-controls="nav">≡</button>
-      <nav id="nav" class="main-nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="directory.html">Directory</a></li>
-          <li><a href="join.html" aria-current="page">Join</a></li>
-          <li><a href="discover.html">Discover</a></li>
-        </ul>
-      </nav>
-    </div>
+    <a class="brand" href="./index.html">
+      <img src="images/logo.svg" alt="Sydney Chamber logo" class="logo" width="42" height="42" />
+      <span>Sydney Chamber of Commerce</span>
+    </a>
+
+    <button id="menuButton" class="menu-button" aria-label="Menu" aria-expanded="false" aria-controls="primaryNav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="primaryNav" class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./directory.html">Directory</a></li>
+        <li><a href="./discover.html">Discover</a></li>
+        <li><a href="./join.html" aria-current="page">Join</a></li>
+        <li><a href="../index.html">Course Home</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="join">
-    <!-- FORM -->
-    <section aria-labelledby="apply-heading">
-      <h1 id="apply-heading">Join the Chamber</h1>
+  <main class="content join">
+    <h1>Join the Chamber</h1>
 
-      <form class="chamber-form" method="get" action="thankyou.html" novalidate>
-        <label>
-          First Name
-          <input type="text" name="firstName" autocomplete="given-name" title="Your first name" required />
-        </label>
+    <div class="join-layout">
+      <!-- FORM -->
+      <section aria-labelledby="apply-heading">
+        <h2 id="apply-heading">Application</h2>
 
-        <label>
-          Last Name
-          <input type="text" name="lastName" autocomplete="family-name" title="Your last name" required />
-        </label>
+        <form class="chamber-form" method="get" action="thankyou.html">
+          <label>
+            First Name
+            <input type="text" name="firstName" autocomplete="given-name" required />
+          </label>
 
-        <label>
-          Organizational Title
-          <input
-            type="text"
-            name="orgTitle"
-            autocomplete="organization-title"
-            title="Your title in the organization (letters, hyphens, spaces; min 7)"
-            pattern="[A-Za-z\- ]{7,}"
-            placeholder="e.g., Marketing Manager"
-          />
-        </label>
+          <label>
+            Last Name
+            <input type="text" name="lastName" autocomplete="family-name" required />
+          </label>
 
-        <label>
-          Email
-          <input type="email" name="email" autocomplete="email" title="Your email address" placeholder="name@example.com" required />
-        </label>
+          <label>
+            Organizational Title
+            <input
+              type="text"
+              name="orgTitle"
+              autocomplete="organization-title"
+              pattern="[A-Za-z\- ]{7,}"
+              title="Letters, hyphens, spaces only. Minimum 7 characters."
+              placeholder="e.g., Marketing Manager"
+            />
+          </label>
 
-        <label>
-          Mobile Phone
-          <input type="tel" name="phone" autocomplete="tel" title="Your mobile number" required />
-        </label>
+          <label>
+            Email
+            <input type="email" name="email" autocomplete="email" placeholder="name@example.com" required />
+          </label>
 
-        <label>
-          Business / Organization
-          <input type="text" name="organization" autocomplete="organization" title="Your business or organization name" required />
-        </label>
+          <label>
+            Mobile Phone
+            <input type="tel" name="phone" autocomplete="tel" required />
+          </label>
 
-        <label>
-          Membership Level
-          <select name="membership" title="Choose a membership level" required>
-            <option value="" selected disabled>Choose one…</option>
-            <option value="NP">NP Membership (Non-profit)</option>
-            <option value="Bronze">Bronze Membership</option>
-            <option value="Silver">Silver Membership</option>
-            <option value="Gold">Gold Membership</option>
-          </select>
-        </label>
+          <label>
+            Business / Organization
+            <input type="text" name="organization" autocomplete="organization" required />
+          </label>
 
-        <label>
-          Organization Description
-          <textarea name="description" title="Describe your organization (optional)"></textarea>
-        </label>
+          <label>
+            Membership Level
+            <select name="membership" required>
+              <option value="" selected disabled>Choose one…</option>
+              <option value="NP">NP Membership (Non-profit)</option>
+              <option value="Bronze">Bronze Membership</option>
+              <option value="Silver">Silver Membership</option>
+              <option value="Gold">Gold Membership</option>
+            </select>
+          </label>
 
-        <!-- Hidden timestamp set by JS -->
-        <input type="hidden" id="timestamp" name="timestamp" />
+          <label>
+            Organization Description
+            <textarea name="description"></textarea>
+          </label>
 
-        <div class="actions">
-          <button type="submit">Submit Application</button>
-        </div>
-      </form>
-    </section>
+          <!-- Hidden timestamp set by JS -->
+          <input type="hidden" id="timestamp" name="timestamp" />
 
-    <!-- MEMBERSHIP LEVEL CARDS -->
-    <aside class="levels" aria-labelledby="levels-heading">
-      <h2 id="levels-heading" class="visually-hidden">Membership Levels</h2>
+          <button type="submit" class="btn-primary">Submit Application</button>
+        </form>
+      </section>
 
-      <article class="level-card">
-        <h3>NP Membership</h3>
-        <p>No fee for non-profit organizations.</p>
-        <a href="#" data-open="modal-np">View benefits</a>
-      </article>
+      <!-- MEMBERSHIP LEVEL CARDS -->
+      <aside class="levels" aria-label="Membership levels">
+        <h2>Membership Levels</h2>
 
-      <article class="level-card">
-        <h3>Bronze</h3>
-        <p>Starter tier with core chamber benefits.</p>
-        <a href="#" data-open="modal-bronze">View benefits</a>
-      </article>
+        <article class="level-card level-np">
+          <h3>NP Membership</h3>
+          <p>No fee for non-profit organizations.</p>
+          <button type="button" class="link-button" data-open="modal-np">View benefits</button>
+        </article>
 
-      <article class="level-card">
-        <h3>Silver</h3>
-        <p>Added visibility &amp; training discounts.</p>
-        <a href="#" data-open="modal-silver">View benefits</a>
-      </article>
+        <article class="level-card level-bronze">
+          <h3>Bronze</h3>
+          <p>Starter tier with core chamber benefits.</p>
+          <button type="button" class="link-button" data-open="modal-bronze">View benefits</button>
+        </article>
 
-      <article class="level-card">
-        <h3>Gold</h3>
-        <p>Premium exposure + event sponsorships.</p>
-        <a href="#" data-open="modal-gold">View benefits</a>
-      </article>
-    </aside>
+        <article class="level-card level-silver">
+          <h3>Silver</h3>
+          <p>Added visibility &amp; training discounts.</p>
+          <button type="button" class="link-button" data-open="modal-silver">View benefits</button>
+        </article>
+
+        <article class="level-card level-gold">
+          <h3>Gold</h3>
+          <p>Premium exposure + event sponsorships.</p>
+          <button type="button" class="link-button" data-open="modal-gold">View benefits</button>
+        </article>
+      </aside>
+    </div>
+
+    <!-- MODALS -->
+    <dialog id="modal-np" aria-labelledby="np-title">
+      <h3 id="np-title">NP Membership Benefits</h3>
+      <ul>
+        <li>Listing in chamber directory</li>
+        <li>Member-only newsletter</li>
+        <li>Free access to community roundtables</li>
+      </ul>
+      <div class="modal-actions">
+        <button type="button" class="btn-primary" data-close>Close</button>
+      </div>
+    </dialog>
+
+    <dialog id="modal-bronze" aria-labelledby="bronze-title">
+      <h3 id="bronze-title">Bronze Benefits</h3>
+      <ul>
+        <li>All NP benefits</li>
+        <li>Event discounts</li>
+        <li>Social media mentions</li>
+      </ul>
+      <div class="modal-actions">
+        <button type="button" class="btn-primary" data-close>Close</button>
+      </div>
+    </dialog>
+
+    <dialog id="modal-silver" aria-labelledby="silver-title">
+      <h3 id="silver-title">Silver Benefits</h3>
+      <ul>
+        <li>All Bronze benefits</li>
+        <li>Quarterly training vouchers</li>
+        <li>Eligible for home-page spotlights</li>
+      </ul>
+      <div class="modal-actions">
+        <button type="button" class="btn-primary" data-close>Close</button>
+      </div>
+    </dialog>
+
+    <dialog id="modal-gold" aria-labelledby="gold-title">
+      <h3 id="gold-title">Gold Benefits</h3>
+      <ul>
+        <li>All Silver benefits</li>
+        <li>Premium directory placement</li>
+        <li>Event co-sponsorship opportunities</li>
+      </ul>
+      <div class="modal-actions">
+        <button type="button" class="btn-primary" data-close>Close</button>
+      </div>
+    </dialog>
   </main>
 
-  <!-- MODALS (native <dialog>) -->
-  <dialog id="modal-np" aria-labelledby="np-title">
-    <h3 id="np-title">NP Membership Benefits</h3>
-    <ul>
-      <li>Listing in chamber directory</li>
-      <li>Member-only newsletter</li>
-      <li>Free access to community roundtables</li>
-    </ul>
-    <div class="modal-actions"><button type="button" data-close>Close</button></div>
-  </dialog>
-
-  <dialog id="modal-bronze" aria-labelledby="bronze-title">
-    <h3 id="bronze-title">Bronze Benefits</h3>
-    <ul>
-      <li>All NP benefits</li>
-      <li>Event discounts</li>
-      <li>Social media mentions</li>
-    </ul>
-    <div class="modal-actions"><button type="button" data-close>Close</button></div>
-  </dialog>
-
-  <dialog id="modal-silver" aria-labelledby="silver-title">
-    <h3 id="silver-title">Silver Benefits</h3>
-    <ul>
-      <li>All Bronze benefits</li>
-      <li>Quarterly training vouchers</li>
-      <li>Eligible for home-page spotlights</li>
-    </ul>
-    <div class="modal-actions"><button type="button" data-close>Close</button></div>
-  </dialog>
-
-  <dialog id="modal-gold" aria-labelledby="gold-title">
-    <h3 id="gold-title">Gold Benefits</h3>
-    <ul>
-      <li>All Silver benefits</li>
-      <li>Premium directory placement</li>
-      <li>Event co-sponsorship opportunities</li>
-    </ul>
-    <div class="modal-actions"><button type="button" data-close>Close</button></div>
-  </dialog>
-
+  <!-- SAME FOOTER as other pages (footer.js uses year + lastModified ids) -->
   <footer class="site-footer">
     <p>Sydney Chamber of Commerce • 100 George St, Sydney NSW • info@sydneychamber.example • (+61) 2 5550 0000</p>
-    <p>© <span id="currentyear"></span> • Ivan Diaz de Sandi Alvarez • WDD 231</p>
+    <p>© <span id="year"></span> • Ivan Diaz de Sandi Alvarez • WDD 231</p>
     <p id="lastModified"></p>
   </footer>
 
-  <script src="scripts/nav.js" defer></script>
-  <script src="scripts/join.js" defer></script>
+  <script defer src="scripts/nav.js"></script>
+  <script defer src="scripts/footer.js"></script>
+  <script defer src="scripts/join.js"></script>
 </body>
 </html>

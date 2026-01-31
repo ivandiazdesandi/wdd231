@@ -1,77 +1,72 @@
-/* Wider screens */
+/* chamber/styles/large.css */
 
-@media screen and (min-width: 640px){
-  #menu{ display:none; }
-
-  .site-header{
-    align-items:center;
+@media (min-width: 640px) {
+  /* Header layout */
+  .brand span {
+    max-width: none;
   }
 
-  .site-nav #navlist{
-    display:flex !important;
-    flex-direction:row;
-    gap:1rem;
-    background:none;
-    margin:0;
-    padding:0;
+  /* Hide hamburger, show nav inline */
+  .menu-button {
+    display: none;
   }
 
-  .site-nav a{ padding:.5rem .75rem; border-radius:6px; }
-  .site-nav a:hover{ background: var(--brand-2); }
-
-  #directory.cards{
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap:1rem;
+  .primary-nav {
+    display: block;
+    position: static;
+    border-top: none;
+    background: transparent;
   }
 
-  .site-footer{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    text-align:left;
-    flex-wrap:wrap;
+  .primary-nav ul {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0;
   }
-  .site-footer p{ margin:.25rem .5rem; }
 
+  .primary-nav li + li {
+    border-top: none;
+  }
+
+  .primary-nav a {
+    padding: 0.45rem 0.8rem;
+    border-radius: 10px;
+  }
+
+  .primary-nav a:hover {
+    background: rgba(255,255,255,0.12);
+  }
+
+  .primary-nav a[aria-current="page"] {
+    background: rgba(255,255,255,0.18);
+  }
+
+  /* Directory grid grows */
   .directory.grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* Footer nicer layout */
+  .site-footer {
+    text-align: left;
+  }
 }
 
-@media screen and (min-width: 960px){
-  #directory.cards{ grid-template-columns: repeat(3, 1fr); }
+@media (min-width: 960px) {
   .directory.grid {
-  grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* ===== Discover Page: Medium Screens ===== */
-@media (min-width: 641px) {
-  .discover-grid {
-    grid-template-areas:
-      "card1 card2"
-      "card3 card4"
-      "card5 card6"
-      "card7 card8";
+  .forecast-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .card img:hover {
-    filter: brightness(0.9);
-    transform: scale(1.02);
-  }
-}
-
-/* ===== Discover Page: Large Screens ===== */
-@media (min-width: 1025px) {
-  .discover-grid {
-    grid-template-areas:
-      "card1 card2 card3 card4"
-      "card5 card6 card7 card8";
+  .spotlights {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .card img:hover {
-    transform: scale(1.05);
-    filter: saturate(1.2);
+    .join-layout {
+    grid-template-columns: 1fr 320px;
+    align-items: start;
   }
-}

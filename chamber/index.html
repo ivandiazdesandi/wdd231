@@ -1,72 +1,119 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sydney Chamber of Commerce</title>
-  <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/small.css">
-  <link rel="stylesheet" href="styles/large.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Sydney Chamber • Home</title>
+  <meta name="description" content="Sydney Chamber of Commerce — supporting local businesses, events, and community growth." />
+  <meta name="author" content="Ivan Diaz de Sandi Alvarez" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+
+  <!-- Social (Open Graph / Facebook) -->
+  <meta property="og:title" content="Sydney Chamber of Commerce — Home" />
+  <meta property="og:description" content="Discover local business resources, events, weather, and featured members." />
+  <meta property="og:image" content="https://ivandiazdesandi.github.io/wdd231/chamber/images/logo.svg" />
+  <meta property="og:url" content="https://ivandiazdesandi.github.io/wdd231/chamber/index.html" />
+
+  <!-- CSS (normalize first) -->
+  <link rel="stylesheet" href="styles/normalize.css" />
+  <link rel="stylesheet" href="styles/small.css" />
+  <link rel="stylesheet" href="styles/large.css" />
 </head>
+
 <body>
-  <header>
-    <img src="images/logo.svg" alt="Sydney Chamber of Commerce Logo" class="logo">
-    <h1>Sydney Chamber of Commerce</h1>
-    <nav>
-      <button id="menu">&#9776;</button>
-      <ul id="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="discover.html">Discover</a></li>
-        <li><a href="directory.html">Directory</a></li>
-        <li><a href="join.html">Join</a></li>
+  <header class="site-header">
+    <a class="brand" href="./index.html">
+      <img src="images/logo.svg" alt="Sydney Chamber logo" class="logo" width="42" height="42" />
+      <span>Sydney Chamber of Commerce</span>
+    </a>
+
+    <button id="menuButton" class="menu-button" aria-label="Menu" aria-expanded="false" aria-controls="primaryNav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="primaryNav" class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="./index.html" aria-current="page">Home</a></li>
+        <li><a href="./directory.html">Directory</a></li>
+        <li><a href="./discover.html">Discover</a></li>
+        <li><a href="./join.html">Join</a></li>
+        <li><a href="../index.html">Course Home</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <img src="images/hero.jpg" alt="Sydney skyline" class="hero-img">
-      <a href="join.html" class="cta">Join the Chamber</a>
+  <main class="content">
+    <h1>Welcome to the Sydney Chamber</h1>
+
+    <!-- HERO + CTA -->
+    <section class="hero" aria-label="Chamber hero">
+      <!-- IMPORTANT: Add a real hero image in chamber/images/hero.webp (or .jpg).
+           Keep it optimized for Lighthouse and page weight. -->
+      <img
+        class="hero-img"
+        src="images/Sydney.jpg"
+        alt="Sydney skyline representing local business community"
+        loading="eager"
+        width="1200"
+        height="600"
+      />
+
+      <div class="hero-overlay">
+        <h2>Grow with Sydney’s business community</h2>
+        <p>Networking, resources, and local opportunities for members.</p>
+        <a class="cta" href="./join.html">Join the Chamber</a>
+      </div>
     </section>
 
-    <!-- Current Events -->
-    <section class="events">
+    <!-- CURRENT EVENTS -->
+    <section class="panel" aria-label="Current events">
       <h2>Current Events</h2>
-      <ul>
-        <li>Networking Night – October 10th</li>
-        <li>Small Business Expo – November 5th</li>
-        <li>Community Fundraiser – December 2nd</li>
+      <ul class="events">
+        <li><strong>Business Mixer:</strong> Thursday 6:00 PM • Circular Quay</li>
+        <li><strong>Workshop:</strong> Marketing Basics for Small Business • Saturday 10:00 AM</li>
+        <li><strong>Community:</strong> Local Vendor Fair • Next Week</li>
       </ul>
     </section>
 
-    <!-- Weather -->
-    <section class="weather">
-      <h2>Weather in Sydney</h2>
-      <p id="current-temp"></p>
-      <p id="weather-desc"></p>
-      <div id="forecast"></div>
+    <!-- WEATHER -->
+    <section class="panel" aria-label="Weather">
+      <h2>Weather</h2>
+
+      <div id="weatherNow" class="weather-now" role="status" aria-live="polite">
+        <p>Loading current weather…</p>
+      </div>
+
+      <div class="forecast">
+        <h3>3-Day Forecast</h3>
+        <div id="forecast" class="forecast-grid" role="status" aria-live="polite">
+          <p>Loading forecast…</p>
+        </div>
+      </div>
     </section>
 
-    <!-- Company Spotlights -->
-    <section class="spotlights">
+    <!-- SPOTLIGHTS -->
+    <section class="panel" aria-label="Member spotlights">
       <h2>Member Spotlights</h2>
-      <div id="spotlight-container"></div>
+      <p class="muted">Featured Silver & Gold members (randomly selected).</p>
+
+      <div id="spotlights" class="spotlights">
+        <p>Loading spotlights…</p>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>Sydney Chamber of Commerce • 100 George St, Sydney NSW</p>
-    <p>info@sydneychamber.example • (+61) 2 5550 0000</p>
-    <p>&copy; 2025 • Ivan Diaz de Sandi Alvarez • WDD 231</p>
+  <footer class="site-footer">
+    <p>Sydney Chamber of Commerce • 100 George St, Sydney NSW • info@sydneychamber.example • (+61) 2 5550 0000</p>
+    <p>© <span id="year"></span> • Ivan Diaz de Sandi Alvarez • WDD 231</p>
     <p id="lastModified"></p>
   </footer>
 
-  <script src="scripts/home.js" type="module"></script>
-  <script>
-    // Last modified footer
-    document.getElementById("lastModified").textContent =
-      "Last Modified: " + document.lastModified;
-  </script>
+  <script defer src="scripts/nav.js"></script>
+  <script defer src="scripts/footer.js"></script>
+  <script defer src="scripts/weather.js"></script>
+  <script defer src="scripts/spotlights.js"></script>
 </body>
 </html>

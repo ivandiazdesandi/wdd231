@@ -1,27 +1,38 @@
-// Footer dates
-document.getElementById("currentyear").textContent = new Date().getFullYear();
-document.getElementById("lastModified").textContent =
-  `Last Modified: ${document.lastModified}`;
+// chamber/scripts/join.js
+document.addEventListener("DOMContentLoaded", () => {
+  // Timestamp for the form
+  const ts = document.getElementById("timestamp");
+  if (ts) ts.value = new Date().toISOString();
 
-// Hidden timestamp (when form loaded)
-const ts = document.getElementById("timestamp");
-if (ts) ts.value = new Date().toISOString();
-
-// Simple modal handling using native <dialog>
-function wireModals() {
-  document.querySelectorAll('[data-open]').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const dlg = document.getElementById(link.dataset.open);
-      if (dlg && typeof dlg.showModal === 'function') dlg.showModal();
+  // Dialog open buttons
+  document.querySelectorAll("[data-open]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("data-open");
+      const dlg = document.getElementById(id);
+      if (dlg && typeof dlg.showModal === "function") dlg.showModal();
     });
   });
 
-  document.querySelectorAll('dialog [data-close]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const dlg = btn.closest('dialog');
+  // Dialog close buttons
+  document.querySelectorAll("dialog [data-close]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const dlg = btn.closest("dialog");
       if (dlg) dlg.close();
     });
   });
-}
-wireModals();
+
+  // Close dialog when clicking backdrop area
+  document.querySelectorAll("dialog").forEach((dlg) => {
+    dlg.addEventListener("click", (e) => {
+      const rect = dlg.getBoundingClientRect();
+      const clickedInDialog =
+        e.clientX >= rect.left &&
+        e.clientX <= rect.right &&
+        e.clientY >= rect.top &&
+        e.clientY <= rect.bottom;
+
+      // If click is outside the dialog box area, close it
+      if (!clickedInDialog) dlg.close();
+    });
+  });
+});
