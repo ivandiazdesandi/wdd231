@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Site Plan • StrideLab</title>
+  <meta name="description" content="Site plan document for the StrideLab individual website project." />
+  <meta name="author" content="Ivan Diaz de Sandi Alvarez" />
+
+  <style>
+    :root{
+      /* Color Scheme (use ONLY on this plan page) */
+      --bg: #0b1220;        /* deep navy background */
+      --panel: #121b2f;     /* card background */
+      --text: #e8eefc;      /* primary text */
+      --muted: #b8c4e6;     /* secondary text */
+      --accent: #43b0ff;    /* accent for headings/links */
+      --accent2: #2ee59d;   /* highlight for callouts */
+      --border: rgba(255,255,255,.12);
+    }
+
+    /* Typography */
+    body{
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    header{
+      padding: 1.25rem 1rem;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(67,176,255,.14), transparent);
+    }
+
+    header h1{
+      margin: 0 0 .25rem 0;
+      font-size: 1.5rem;
+      letter-spacing: .2px;
+    }
+
+    header p{
+      margin: 0;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+
+    main{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 1rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    section{
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1rem 1rem;
+    }
+
+    h2{
+      margin: 0 0 .5rem 0;
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    h3{
+      margin: 1rem 0 .25rem 0;
+      font-size: 1rem;
+      color: var(--accent2);
+    }
+
+    ul, ol{ margin: .5rem 0 0 1.1rem; }
+    li{ margin: .35rem 0; }
+
+    a{
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .chips{
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: .5rem;
+    }
+
+    .chip{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      padding: .35rem .55rem;
+      border-radius: 999px;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+
+    .grid{
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 860px){
+      .grid.two{
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+      }
+    }
+
+    .wireframe{
+      border: 1px dashed rgba(255,255,255,.25);
+      border-radius: 12px;
+      padding: .75rem;
+      background: rgba(0,0,0,.18);
+      color: var(--muted);
+    }
+
+    .wf-box{
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 10px;
+      padding: .6rem .7rem;
+      margin: .5rem 0;
+      background: rgba(255,255,255,.03);
+    }
+
+    footer{
+      padding: 1rem;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>StrideLab — Individual Project Site Plan</h1>
+    <p>
+      This site plan outlines the design and content strategy for a 3-page, data-driven website project
+      built with HTML, CSS, and JavaScript (no frameworks). This project is separate from the Chamber project.
+    </p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Site Name</h2>
+      <p><strong>StrideLab</strong></p>
+      <p>
+        Reason: The project helps users plan walking/running challenges and training weeks. “Stride” matches the theme
+        of steps/distance, and “Lab” implies tracking, experimenting, and improving.
+      </p>
+      <p><em>Optional domain idea:</em> stridelab.app (availability not required)</p>
+    </section>
+
+    <section>
+      <h2>Site Purpose</h2>
+      <p>
+        StrideLab is a practical planning hub for long-distance walking/running challenges. It provides:
+      </p>
+      <ul>
+        <li>A curated list of routes/challenges with distance, elevation, difficulty, and required time estimates.</li>
+        <li>Interactive filtering + a detail modal for each route.</li>
+        <li>A simple membership / contact form and a confirmation page that displays submitted data.</li>
+        <li>Weather integration for the selected route location to support training decisions.</li>
+        <li>User preferences saved with localStorage (view mode, favorites, last selected route).</li>
+      </ul>
+
+      <div class="chips" aria-label="Planned features">
+        <span class="chip">3 pages</span>
+        <span class="chip">15+ items from JSON</span>
+        <span class="chip">Modal dialog</span>
+        <span class="chip">LocalStorage</span>
+        <span class="chip">Fetch + async/await</span>
+        <span class="chip">try/catch</span>
+        <span class="chip">ES Modules</span>
+        <span class="chip">Accessible + responsive</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Scenarios</h2>
+      <p>Target audience: people who train for long walks, hikes, or endurance challenges and want simple planning tools.</p>
+      <ol>
+        <li>“I want a 30–45 km route near Sydney. Which one has less elevation so it’s easier on my joints?”</li>
+        <li>“How long will this route realistically take if I want to finish under 6.5 hours?”</li>
+        <li>“What’s the weather like for the next 3 days near the route start so I can pick the best day?”</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Color Scheme</h2>
+      <p>Two primary colors + usage (applies to the project site later; also used on this plan page):</p>
+      <ul>
+        <li><strong>Deep Navy (#0b1220)</strong> — site background, header/footer background.</li>
+        <li><strong>Sky Blue (#43b0ff)</strong> — headings, links, focus states, buttons.</li>
+        <li><strong>Mint (#2ee59d)</strong> — highlights (tags, badges, “favorite” state).</li>
+        <li><strong>Off-White (#e8eefc)</strong> — main text.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Typography</h2>
+      <ul>
+        <li><strong>System UI stack</strong> (system-ui, Segoe UI, Roboto, etc.) — fast loading, clean, readable.</li>
+        <li>Usage: headings + body text (consistent). Optional third font not needed to keep performance high.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Planned Pages</h2>
+      <ul>
+        <li><strong>index.html</strong> — Landing page: intro, featured routes, quick filters, CTA, and a small weather panel for the selected route.</li>
+        <li><strong>routes.html</strong> — Route library: displays 15+ route cards from JSON, filter/sort, grid/list toggle (saved to localStorage), modal details.</li>
+        <li><strong>join.html</strong> — Membership / contact form (GET) + confirmation page (thankyou.html) displaying submitted data.</li>
+      </ul>
+      <p><em>Note:</em> thankyou.html does not count toward the 3-page requirement.</p>
+    </section>
+
+    <section class="grid two">
+      <div>
+        <h2>Wireframe — Mobile (Home)</h2>
+        <div class="wireframe" aria-label="Mobile wireframe">
+          <div class="wf-box">Header: Logo + Site Name + Hamburger</div>
+          <div class="wf-box">Hero: Title + short tagline + CTA button</div>
+          <div class="wf-box">Featured Routes (2–3 cards)</div>
+          <div class="wf-box">Weather Panel (current + 3-day forecast)</div>
+          <div class="wf-box">Footer: nav links + attributions + video link</div>
+        </div>
+      </div>
+
+      <div>
+        <h2>Wireframe — Desktop/Tablet (Home)</h2>
+        <div class="wireframe" aria-label="Desktop wireframe">
+          <div class="wf-box">Header: Logo + Site Name + Horizontal Nav</div>
+          <div class="wf-box">Hero: left (text + CTA) / right (image or featured stat)</div>
+          <div class="wf-box">Main Grid: Featured Routes (left 2/3) + Weather Panel (right 1/3)</div>
+          <div class="wf-box">Footer: split columns (links / credits / video link)</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Data + Dynamic Content Plan (JS requirements mapping)</h2>
+      <h3>Data Source</h3>
+      <ul>
+        <li>Local JSON file: <code>data/routes.json</code> with at least 15 routes.</li>
+        <li>Each route shows at least 4 properties: name, distance_km, elevation_m, difficulty, suburb/start point, estimated_time.</li>
+      </ul>
+
+      <h3>External API</h3>
+      <ul>
+        <li>OpenWeatherMap API (or similar) to show weather for the selected route start location.</li>
+      </ul>
+
+      <h3>Local Storage</h3>
+      <ul>
+        <li>Persist user view preference (grid/list) and favorites.</li>
+        <li>Persist last selected route to auto-load its weather on next visit.</li>
+      </ul>
+
+      <h3>Modal Dialog</h3>
+      <ul>
+        <li>Modal shows route details, tips, and “favorite” action.</li>
+        <li>Accessible: focus trapping, ESC to close, proper labels.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <small>Site plan for WDD 231 Individual Project • Ivan Diaz de Sandi Alvarez</small>
+  </footer>
+</body>
+</html>
