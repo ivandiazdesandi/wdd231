@@ -70,3 +70,51 @@
     grid-template-columns: 1fr 320px;
     align-items: start;
   }
+
+  /* ===== Discover Page Grid Areas ===== */
+
+/* Medium screens: 641px to 1024px */
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+  .discover-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "a1 a1"
+      "a2 a3"
+      "a4 a4"
+      "a5 a6"
+      "a7 a8";
+  }
+
+  /* Hover effects ONLY here and above (not mobile) */
+  .discover-card figure img {
+    transition: transform .25s ease, filter .25s ease, box-shadow .25s ease;
+  }
+
+  .discover-card figure img:hover {
+    transform: scale(1.03);
+    filter: saturate(1.1) contrast(1.05);
+    box-shadow: 0 10px 18px rgba(0,0,0,.18);
+  }
+}
+
+/* Large screens: 1025px+ (different named-area layout) */
+@media screen and (min-width: 1025px) {
+  .discover-grid {
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "a1 a1 a2 a3"
+      "a4 a5 a6 a6"
+      "a7 a7 a8 a8";
+  }
+
+  /* Hover effects still apply */
+  .discover-card figure img {
+    transition: transform .25s ease, filter .25s ease, box-shadow .25s ease;
+  }
+
+  .discover-card figure img:hover {
+    transform: scale(1.03);
+    filter: brightness(1.05) contrast(1.08);
+    box-shadow: 0 10px 18px rgba(0,0,0,.18);
+  }
+}

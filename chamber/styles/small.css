@@ -459,3 +459,118 @@ dialog::backdrop {
   margin-top: 0.75rem;
   text-align: right;
 }
+
+/* ===== Discover Page ===== */
+.visit-message {
+  margin: 0 0 1rem 0;
+}
+
+.visit-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  background: #e8f4ff;
+  color: #0b2a3d;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 10px;
+  padding: .75rem 1rem;
+}
+
+.visit-inner p {
+  margin: 0;
+}
+
+.visit-close {
+  border: none;
+  background: transparent;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #0b2a3d;
+}
+
+.discover-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "a1"
+    "a2"
+    "a3"
+    "a4"
+    "a5"
+    "a6"
+    "a7"
+    "a8";
+}
+
+.discover-card {
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 12px;
+  padding: 1rem;
+  background: #fff;
+}
+
+.discover-card h2 {
+  font-size: 1.1rem;
+  margin: 0 0 .5rem 0;
+}
+
+.discover-card figure {
+  margin: 0 0 .5rem 0;
+}
+
+.discover-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.discover-card address {
+  font-style: normal;
+  font-weight: 600;
+  margin: .5rem 0;
+}
+
+.discover-card p {
+  margin: .5rem 0 0 0;
+}
+
+.learn-more {
+  margin-top: .8rem;
+  padding: .55rem .9rem;
+  border-radius: 10px;
+  border: 1px solid #004466;
+  background: #004466;
+  color: #fff;
+  cursor: pointer;
+}
+
+.learn-more:focus-visible {
+  outline: 3px solid #89b4ff;
+  outline-offset: 2px;
+}
+
+/* Assign grid areas to each card */
+.area-1 { grid-area: a1; }
+.area-2 { grid-area: a2; }
+.area-3 { grid-area: a3; }
+.area-4 { grid-area: a4; }
+.area-5 { grid-area: a5; }
+.area-6 { grid-area: a6; }
+.area-7 { grid-area: a7; }
+.area-8 { grid-area: a8; }
+
+/* Utility for screen-reader-only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}

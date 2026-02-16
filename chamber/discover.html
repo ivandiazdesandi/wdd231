@@ -1,48 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover Sydney — Explore the best attractions, parks, museums, and landmarks around the Sydney Chamber of Commerce area.">
-  <meta name="author" content="Ivan Diaz de Sandi Alvarez">
-  <title>Discover Sydney | Chamber of Commerce</title>
-  <link rel="icon" href="images/favicon.svg">
-  <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/small.css">
-  <link rel="stylesheet" href="styles/medium.css">
-  <link rel="stylesheet" href="styles/large.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sydney Chamber • Discover</title>
+  <meta name="description" content="Discover Sydney: key places, features, and local highlights for visitors and prospective chamber members." />
+  <meta name="author" content="Ivan Diaz de Sandi Alvarez" />
+
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sydney Chamber of Commerce — Discover" />
+  <meta property="og:description" content="Explore highlights and places of interest around Sydney." />
+  <meta property="og:image" content="https://ivandiazdesandi.github.io/wdd231/chamber/images/logo.svg" />
+  <meta property="og:url" content="https://ivandiazdesandi.github.io/wdd231/chamber/discover.html" />
+
+  <link rel="stylesheet" href="styles/normalize.css" />
+  <link rel="stylesheet" href="styles/small.css" />
+  <link rel="stylesheet" href="styles/large.css" />
 </head>
 
 <body>
-  <header>
-    <div class="logo-nav">
-      <img src="images/logo.svg" alt="Sydney Chamber of Commerce Logo" class="logo">
-      <h1>Sydney Chamber of Commerce</h1>
-    </div>
-    <nav>
-      <button id="menuBtn" aria-label="menu button">☰</button>
-      <ul id="navMenu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="directory.html">Directory</a></li>
-        <li><a href="join.html">Join</a></li>
-        <li><a class="active" href="discover.html">Discover</a></li>
+  <header class="site-header">
+    <a class="brand" href="./index.html">
+      <img src="images/logo.svg" alt="Sydney Chamber logo" class="logo" />
+      <span>Sydney Chamber of Commerce</span>
+    </a>
+
+    <button id="menuButton" class="menu-button" aria-label="Menu" aria-expanded="false" aria-controls="primaryNav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="primaryNav" class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./directory.html">Directory</a></li>
+        <li><a href="./discover.html" aria-current="page">Discover</a></li>
+        <li><a href="./join.html">Join</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section class="visitor-message" id="visitMsg"></section>
+  <main class="content">
+    <h1>Discover Sydney</h1>
 
-    <h2 class="page-title">Discover Sydney</h2>
-    <p class="intro">Explore eight of Sydney’s most iconic locations — from beaches to landmarks and hidden gems that make our city thrive.</p>
+    <!-- Visit message (localStorage) -->
+    <section class="visit" aria-label="Visit information">
+      <div id="visitMessage" class="visit-message" role="status" aria-live="polite"></div>
+    </section>
 
-    <div id="discoverGrid" class="discover-grid"></div>
+    <!-- Cards injected here -->
+    <section id="discoverGrid" class="discover-grid" aria-label="Sydney places of interest"></section>
   </main>
 
-  <footer>
-    <p>© <span id="year"></span> Sydney Chamber of Commerce | Last Modified: <span id="mod"></span></p>
+  <footer class="site-footer">
+    <p>Sydney Chamber of Commerce • 100 George St, Sydney NSW • info@sydneychamber.example • (+61) 2 5550 0000</p>
+    <p>© <span id="year"></span> • Ivan Diaz de Sandi Alvarez • WDD 231</p>
+    <p id="lastModified"></p>
   </footer>
 
-  <script src="scripts/discover.js" type="module"></script>
+  <!-- footer date utilities -->
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+      const lm = document.getElementById('lastModified');
+      if (lm) lm.textContent = `Last Modified: ${document.lastModified}`;
+    });
+  </script>
+
+  <script defer src="scripts/nav.js"></script>
+
+  <!-- IMPORTANT: type="module" -->
+  <script type="module" src="scripts/discover.js"></script>
 </body>
 </html>
